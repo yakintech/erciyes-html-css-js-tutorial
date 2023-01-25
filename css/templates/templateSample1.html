@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             margin: 0;
@@ -63,11 +63,38 @@
             width: 240px;
             height: 254px;
         }
-        hr{
+
+        hr {
             width: 112px;
             height: 4px;
             background-color: #fff;
-            border:none;
+            border: none;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2C3D4F;
+            height: 272px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .info-box{
+            color:#fff; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+        }
+        .info-box h2{
+            font-size: 24px;
+        }
+
+        footer{
+            background-color: #1A252F;
+            text-align: center;
+            color:#fff;
+            padding: 50px;
         }
     </style>
 </head>
@@ -91,15 +118,36 @@
 
         <h1 style="font-size: 64px; font-weight: 700;">Start Bootstrap</h1>
 
-        <div style="display: flex">
+        <div style="display: flex; align-items: center;">
             <hr>
-            <span style="color:#fff; margin-left: 5px; margin-right: 5px;">Star</span>
+            <i class="fa fa-star" style="color:#fff; margin-left: 5px; margin-right: 5px; font-size: 30px;"></i>
             <hr>
         </div>
 
 
         <p style="font-size: 24px">Graphic Artist - Web Designer - Illustrator</p>
     </div>
+
+    <div class="info">
+        <div class="info-box">
+            <h2>Location</h2>
+            <p>2215 John Daniel Drive
+                Clark, MO 65243</p>
+        </div>
+        <div class="info-box">
+            <h2>Location</h2>
+            <p>2215 John Daniel Drive
+                Clark, MO 65243</p>
+        </div>
+        <div class="info-box">
+            <h2>Location</h2>
+            <p>2215 John Daniel Drive
+                Clark, MO 65243</p>
+        </div>
+    </div>
+    <footer>
+        Copyright © Your Website 2022
+    </footer>
 
 </body>
 
