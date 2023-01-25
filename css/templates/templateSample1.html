@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: #2C3D4F;
+            height: 104px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        .logo a {
+            color: #fff;
+            font-size: 28px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 30px;
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            color: #19BC9C
+        }
+
+        ul {
+            display: flex;
+            list-style-type: none;
+        }
+
+        .content {
+            background-color: #19BC9C;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .content h1,
+        p {
+            color: #fff
+        }
+
+        .content img {
+            width: 240px;
+            height: 254px;
+        }
+        hr{
+            width: 112px;
+            height: 4px;
+            background-color: #fff;
+            border:none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">START BOOTSTRAP</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" alt="">
+
+        <h1 style="font-size: 64px; font-weight: 700;">Start Bootstrap</h1>
+
+        <div style="display: flex">
+            <hr>
+            <span style="color:#fff; margin-left: 5px; margin-right: 5px;">Star</span>
+            <hr>
+        </div>
+
+
+        <p style="font-size: 24px">Graphic Artist - Web Designer - Illustrator</p>
+    </div>
+
+</body>
+
+</html>
