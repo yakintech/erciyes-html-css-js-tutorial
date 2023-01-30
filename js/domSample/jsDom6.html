@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">gidiyor...</button>
+</body>
+<script>
+    //1000 -> 1000 milisaniye yani 1 saniye demektir!
+    let left = 0;
+    setInterval(function () {
+
+        //her saniyede butonu 100 px sağa götür
+        left = left + 100;
+        document.getElementById('btn').style.marginLeft = left + "px"
+
+    }, 500)
+</script>
+
+</html>
