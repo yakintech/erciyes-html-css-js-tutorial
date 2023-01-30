@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body style="display: flex;justify-content: center; align-items: center;">
+    <button id="hello" onclick="calc()">Calc</button>
+</body>
+<script>
+    //ekrana bir buton koy butona her tıkladığında butonun genişliği ve yüksekliği 20 px artsın;
+
+    let width = 50;
+    let height = 50;
+    
+    function calc(){
+
+        width = width + 20;
+        height = height + 20;
+
+        document.getElementById('hello').style.width = width + "px";
+        document.getElementById('hello').style.height = height + "px";
+
+    }
+</script>
+</html>
