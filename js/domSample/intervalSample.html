@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <button id="btn">Go go go</button>
 </body>
 <script>
     //Ekranda bir button var. Ekran açıldığında her saniyede buton 100 px sağa gidiyor. 1000 px e ulaştığında buton tekrar başladığı noktaya geri gelecek
-    
+
+    let btn = document.getElementById("btn");
+    let left = 0;
+
+    setInterval(function () {
+        left = left + 100;
+        if (left > 1000) {
+            left = 0;
+        }
+        btn.style.marginLeft = left + "px";
+    }, 1000 );
+
+
 </script>
+
 </html>

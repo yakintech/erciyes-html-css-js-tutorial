@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        button {
+            width: 160px;
+            height: 50px;
+
+        }
+
+        #finish {
+            width: 4px;
+            height: 450px;
+            background-color: black;
+            position: fixed;
+            left: 1300px;
+            top: 0px;
+            border: none
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="myAudio">
+        <source src="carStart.wav" type="audio/wav">
+    </audio>
+    <hr id="finish">
+    <div style="background-color:aqua;">
+        <button id="btn1">Car-1</button>
+    </div>
+    <hr>
+    <div style="background-color: yellow">
+        <button id="btn2">Car-2</button>
+    </div>
+    <hr>
+    <div style="background-color: tomato">
+        <button id="btn3">Car-3</button>
+    </div>
+    <hr>
+    <div>
+        <button onclick="start()">START</button>
+    </div>
+</body>
+<script>
+
+    let left1 = 0;
+    let left2 = 0;
+    let left3 = 0;
+
+    let finish = 1140;
+
+    function start() {
+
+        document.getElementById('myAudio').play();
+
+        let interval = setInterval(() => {
+            let randomNumber1 = Math.floor(Math.random() * 90);
+            let randomNumber2 = Math.floor(Math.random() * 90);
+            let randomNumber3 = Math.floor(Math.random() * 90);
+
+            left1 = left1 + randomNumber1;
+            left2 = left2 + randomNumber2;
+            left3 = left3 + randomNumber3;
+
+            if (left1 > finish || left2 > finish || left3 > finish) {
+                clearInterval(interval);
+            }
+
+            document.getElementById('btn1').style.marginLeft = left1 + "px";
+            document.getElementById('btn2').style.marginLeft = left2 + "px";
+            document.getElementById('btn3').style.marginLeft = left3 + "px";
+
+
+        }, 300);
+
+    }
+
+
+</script>
+
+</html>
