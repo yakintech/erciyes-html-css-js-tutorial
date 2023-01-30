@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    function hello() {
+        console.log('Hello JS!');
+    }
+
+
+    //function parameters
+    function calc(x, y) {
+        //function body
+        let z = x * y * 1.18;
+        console.log('Result ', z);
+    }
+
+    calc(20, 10);
+
+
+
+    function calcData(x, y, myCallback) {
+
+        let result = x * y * 1.08;
+        result = result / 2;
+
+
+        myCallback(result);
+    }
+
+    calcData(10, 20, function (data) {
+        console.log(data);
+    })
+
+
+
+    function imageOperation(image, myCallback) {
+        let result = image + ".png";
+        //
+        //
+        //
+
+        myCallback(image)
+
+    }
+
+    let print = function (data) {
+        console.log('printing.....');
+        console.log('DATA ', data);
+    }
+
+    imageOperation('cagatayimage', print)
+
+
+
+    let name = "Çağatay";
+    let number = 18;
+
+
+    function taxCalc(price) {
+        //return kelimesiyle fonksiyon bir data return ediyor!
+        return price * 1.18;
+    }
+
+    let result = taxCalc(100);
+    console.log('result ', result);
+
+
+</script>
+
+</html>

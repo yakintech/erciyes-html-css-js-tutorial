@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let countries = ["Türkiye", "Azerbaycan", "Rusya", "Yunanistan", "İran"];
+
+    for (i = 0; i < countries.length; i++) {
+       // console.log(countries[i]);
+    }
+
+
+    countries.forEach(function(item){
+        // console.log('foreach item', item);
+    })
+
+    countries.map(getCity)
+
+    function getCity(item){
+        console.log('item ', item);
+    }
+
+
+    countries.map(function(item){
+        console.log('item ', item);
+    })
+
+</script>
+
+</html>
