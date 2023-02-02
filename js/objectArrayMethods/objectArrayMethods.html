@@ -1047,6 +1047,54 @@
     console.log('10. son harfi n ile bitenler ', filteredProducts5);
 
 
+    //11. name içerisinde a harfi geçenler 
+    let filteredProducts6 = products.filter(q => q.name.toLowerCase().includes('a'));
+    console.log('11. name içerisinde a harfi geçenler  ', filteredProducts6);
+
+
+    //12. name a ile başlayanlar. (Büyük veya küçük harf!!)
+    let filteredProducts7 = products.filter(q => q.name.toLowerCase().startsWith('a'));
+    console.log('12. name a ile başlayanlar. (Büyük veya küçük harf!!)');
+
+    
+    //find method!!!
+    //filter metodu bize bir array dönerken find metodu içerisine aldığı sorguya uygun İLK objeyi bana verir. Bu sebeple genellikle id aramalarında kullanılır
+    // filter() ->  []   -  find() ->  {}
+
+    //13. id si 3 olan ürünü bana ver
+    let product = products.find(q => q.id == 3);
+    console.log('13. id si 3 olan ürünü bana ver ',  product);
+
+    //14. id si 999 olan ürünü bana ver ( eğer ürün yoksa yani bulamadıysa undefined DÖNER )
+    let product2 = products.find(q => q.id == 999);
+    console.log('14. id si 999 olan ürünü bana ver ', product2);
+    
+
+    // SORT
+    // 15. ürünleri name e göre SIRALA
+
+    let sortedProducts = products.sort(function(a,b){
+        return a.name.localeCompare(b.name)
+    });
+    console.log('15. ürünleri name e göre SIRALA ', sortedProducts);
+
+
+    // 16. ürünleri unitPrice a göre sırala!
+    let sortedProducts2 = products.sort(function(a,b){
+        return a.unitPrice - b.unitPrice;
+    })
+    console.log('16. ürünleri unitPrice a göre sırala! ', sortedProducts2);
+
+
+    //17. Id si 4 olan ürünü diziden sil ( ID si 4 olmayan ürünleri bana ver!! )
+
+    let filteredProducts8 = products.filter(q => q.id != 4);
+    console.log('Id si 4 olan ürünü diziden sil ( ID si 4 olmayan ürünleri bana ver!! ) ', filteredProducts8);
+
+
+    
+
+    
 </script>
 
 </html>

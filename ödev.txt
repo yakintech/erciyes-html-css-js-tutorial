@@ -1,0 +1,14 @@
+Ödev - 02 Şubat 
+
+1) https://northwind.vercel.app/api/customers url den customerlar bir diziye atanacak ve 4 kolon tabloda gösterilecek. (id, companyName, contactName, city)
+
+2) kaç adet customer var?
+3) a ( küçük veya büyük harf) ile başlayan customer ları console a yaz
+4) Country 'UK' olan customerları console a yaz
+5) customer ları companyName e göre sırala ( sort )
+6) id si "DUMON" olan customer ı console a yaz! tek bir object
+
+
+7) *** Telefon numarası 1 ile başlayanları console a yaz
+8) ***** Telefon numaralarını console a aşağıdaki formatta yaz
+4065555834
