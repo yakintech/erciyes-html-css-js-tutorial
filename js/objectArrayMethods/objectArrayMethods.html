@@ -6,31 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <table class="w3-table-all">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Unit Price</th>
-                <th>Stock</th>
-                <th>Quantity Per Unit</th>
-            </tr>
-        </thead>
-
-        <tbody id="products">
-
-
-        </tbody>
-    </table>
-
 
 </body>
 <script>
     let products = [
+        {
+            "id": 4,
+            "supplierId": 2,
+            "categoryId": 3,
+            "quantityPerUnit": "48 - 6 oz jars",
+            "unitPrice": 22,
+            "unitsInStock": 53,
+            "unitsOnOrder": 0,
+            "reorderLevel": 0,
+            "discontinued": true,
+            "name": "Chef Anton's Cajun Seasoning",
+            "supplier": {
+                "id": 2,
+                "companyName": "New Orleans Cajun Delights",
+                "contactName": "Shelley Burke",
+                "contactTitle": "Order Administrator",
+                "address": {
+                    "street": "P.O. Box 78934",
+                    "city": "New Orleans",
+                    "region": "LA",
+                    "postalCode": 70117,
+                    "country": "USA",
+                    "phone": "(100) 555-4822"
+                }
+            },
+            "category": {
+                "id": 3,
+                "description": "Desserts candies and sweet breads",
+                "name": "Confections"
+            }
+        },
         {
             "id": 5,
             "supplierId": 2,
@@ -498,7 +511,7 @@
             "id": 36,
             "supplierId": 17,
             "categoryId": 8,
-            "quantityPerUnit": "24 - 250 g  jars",
+            "quantityPerUnit": "24 - 250 g jars",
             "unitPrice": 19,
             "unitsInStock": 112,
             "unitsOnOrder": 0,
@@ -964,43 +977,74 @@
         }
     ]
 
-    //stok sıfır ise o satırı KIRMIZI YAP!
-    products.forEach(function (item) {
 
-        let trElement = document.createElement('tr');
+    //1. kaç adet products var?
 
-        let tdId = document.createElement('td');
-        tdId.innerHTML = item.id
+    let productsLength = products.length;
+    console.log('1. kaç adet products var? ', products.length);
 
-        let tdName = document.createElement('td');
-        tdName.innerHTML = item.name.toUpperCase();
+    //2. ürünlerin toplam fiyatı
+    let totalPrice = 0;
 
-        let tdUnitPrice = document.createElement('td');
-        tdUnitPrice.innerHTML = item.unitPrice.toFixed(2);
+    products.forEach(element => {
+        totalPrice = totalPrice + element.unitPrice;
+    });
 
-        let tdStock = document.createElement('td');
-        tdStock.innerHTML = item.unitsInStock;
+    console.log('2. ürünlerin toplam fiyatı ', totalPrice);
 
-        let tdQuantityPerUnit = document.createElement('td');
-        tdQuantityPerUnit.innerHTML = item.quantityPerUnit;
-
-
-        if (item.unitsInStock == 0) {
-            trElement.style.backgroundColor = 'tomato'
-        }
+    //3. ürünlerin ortalama fiyatı
+    let avgPrice = totalPrice / productsLength;
+    console.log('3. ürünlerin ortalama fiyatı ', avgPrice);
 
 
-        trElement.appendChild(tdId);
-        trElement.appendChild(tdName);
-        trElement.appendChild(tdUnitPrice);
-        trElement.appendChild(tdStock);
-        trElement.appendChild(tdQuantityPerUnit);
+    //4. en düşük fiyata sahip ürün
 
-
-        document.getElementById('products').appendChild(trElement);
-
+    let minProduct = products[0];
+    products.forEach(item => {
+        if (minProduct.unitPrice > item.unitPrice)
+            minProduct = item;
     })
 
+    console.log('4. en düşük fiyata sahip ürün', minProduct);
+
+
+    //5. en yüksek fiyata sahip ürün
+    let maxProduct = products[0];
+    products.forEach(item => {
+        if (maxProduct.unitPrice < item.unitPrice)
+            maxProduct = item
+    })
+
+    console.log('5. en yüksek fiyata sahip ürün ', maxProduct);
+
+
+
+    //filter
+    //6. fiyatı 20 den büyük ürünLERİ bana ver
+    let filteredProducts = products.filter(q => q.unitPrice > 20);
+
+    console.log('6. fiyatı 20 den büyük ürünLERİ bana ver ', filteredProducts);
+
+
+    //7. fiyatı 20 den büyük VE categoryId si 3 olan ürünLERİ bana ver
+    let filteredProducts2 = products.filter(q => q.unitPrice > 20 && q.categoryId == 3);
+
+    console.log('7. fiyatı 20 den büyük VE categoryId si 3 olan ürünLERİ bana ver ', filteredProducts2);
+
+    //8. stock 20 den küçük VEYA unitPrice 10 dan büyük olanları bana ver
+    let filteredProducts3 = products.filter(q => q.unitPrice > 10 || q.unitsInStock < 20);
+    console.log('8. stock 20 den küçük VEYA unitPrice 10 dan büyük olanları bana ver ', filteredProducts3);
+
+
+    //9. name 'A' harfi ile başlayanlar!
+
+    let filteredProducts4 = products.filter(q => q.name.startsWith('A'));
+    console.log('9. name A harfi ile başlayanlar! ', filteredProducts4);
+
+
+    //10. son harfi n ile bitenler
+    let filteredProducts5 = products.filter(q => q.name.endsWith('n'));
+    console.log('10. son harfi n ile bitenler ', filteredProducts5);
 
 
 </script>
