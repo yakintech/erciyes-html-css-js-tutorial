@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Data</label>
+        <input type="text" id="data">
+    </div>
+    <div>
+        <button id="go" onclick="go()">Go</button>
+    </div>
+</body>
+<script>
+    //Ekrana bir input bir buton koy. Butona her tıkladığında inputtaki değer kadar buton sağa kaysın.
+
+    let left = 0;
+    function go() {
+        let data = document.getElementById('data').value;
+        left = left + Number(data);
+
+        document.getElementById('go').style.marginLeft = left + "px"
+    }
+
+    // 0 + 20 = 020
+</script>
+
+</html>
