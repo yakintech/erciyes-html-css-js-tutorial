@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <div>
+            <label>Id:</label>
+            <input type="text" id="categoryId" />
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" id="name" />
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text" id="description" />
+        </div>
+        <div>
+            <button onclick="update()">Update</button>
+        </div>
+    </div>
+</body>
+<script>
+    function update() {
+
+        let id = document.getElementById('categoryId').value;
+        let name = document.getElementById('name').value;
+        let description = document.getElementById('description').value;
+
+        let updateData = {
+            name: name,
+            description: description
+        }
+
+        axios.put('https://northwind.vercel.app/api/categories/' + id, updateData)
+            .then(res => {
+                console.log('response ', res.data);
+                alert('Success!')
+            })
+
+
+    }
+</script>
+
+</html>
