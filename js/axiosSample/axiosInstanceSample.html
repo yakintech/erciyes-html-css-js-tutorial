@@ -34,6 +34,10 @@
             .then(res => {
                 console.log('Response data', res.data);
             })
+            .catch(err => {
+                console.log('Timeout düştü haydi başka apiye');
+                
+            })
 
     }
 
