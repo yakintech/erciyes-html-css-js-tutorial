@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Name:</label>
+        <input type="text" id="name" />
+    </div>
+    <div>
+        <label for="">Description:</label>
+        <input type="text" id="description" />
+    </div>
+    <div>
+        <button onclick="add()">Add</button>
+    </div>
+</body>
+<script>
+
+    function add() {
+        let name = document.getElementById('name').value;
+        let description = document.getElementById('description').value;
+
+        let newCategory = {
+            name: name,
+            description: description
+        }
+
+        //fetch default olarak GET isteği atar
+        fetch('https://northwind.vercel.app/api/categories', {
+            method: 'POST',
+            body: JSON.stringify(newCategory),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Data ', data);
+            })
+
+    }
+
+</script>
+
+</html>
