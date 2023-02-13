@@ -12,3 +12,14 @@
 7) *** Telefon numarası 1 ile başlayanları console a yaz
 8) ***** Telefon numaralarını console a aşağıdaki formatta yaz
 4065555834
+
+
+
+13 Şubat Ödev
+Endpoint: https://northwind.vercel.app/api/suppliers
+
+1) Ekrana 4 input konulacak ( companyName, contactName ...) ve bir post işlemi yapılacak ( axios veya fetch )
+
+2) ul içerinde companyName ler gösterilecek (axios veya fetch. category örneği var) 
+
+3) Ekrana bir input bir buton koy. Butona tıkladığında inputtan aldığı id ye uygun supplier ı silsin!

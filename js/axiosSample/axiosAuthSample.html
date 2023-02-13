@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+
+</body>
+<script>
+
+    axios.get('https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=ankara', {
+        headers: {
+            "authorization": "apikey 750QOsVGBkUd2zbWwvFwaA:6nl3PLwynPmSoV3ZdfU4621"
+        }
+    })
+    .then(res => {
+        console.log('Response ', res.data);
+    })
+    .catch(err => {
+        console.log('error ', err);
+    })
+
+</script>
+
+</html>
